@@ -5,9 +5,7 @@
     <classes>
       <class name="test.DemoTest">
         <methods>
-          <include name="tearDown"/>
-          <include name="testCase1"/>
-          <include name="setup"/>
+          <include name="testDataBase"/>
         </methods>
       </class> <!-- test.DemoTest -->
     </classes>

@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
@@ -40,7 +41,7 @@ public class MyListener implements ITestListener {
 		ExtentTestFactory.getInstance().getExtentTest().log(Status.FAIL,
 				"Test Case : " + result.getMethod().getMethodName() + "--> Failed");
 		ExtentTestFactory.getInstance().getExtentTest().log(Status.FAIL, result.getThrowable());
-
+		
 		SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy hh-mm-ss");
 		Date date = new Date();
 		String formatedDate = format.format(date);
