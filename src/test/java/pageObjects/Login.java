@@ -19,5 +19,13 @@ public class Login extends BaseClass {
 				PropertiesOperations.getProperty("password"));
 		click_Custom(LocalDriverFactory.getInstance().getLocalDriver().findElement(btn_login), "Login Button");
 	}
+	
+	public void login2(String un, String pwd) {
+		sendKeys_Custom(LocalDriverFactory.getInstance().getLocalDriver().findElement(txt_userName), "UserId",
+				un);
+		sendKeys_Custom(LocalDriverFactory.getInstance().getLocalDriver().findElement(txt_password), "Password",
+				pwd);
+		click_Custom(LocalDriverFactory.getInstance().getLocalDriver().findElement(btn_login), "Login Button");
+	}
 
 }

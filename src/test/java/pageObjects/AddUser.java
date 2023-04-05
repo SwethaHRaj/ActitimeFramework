@@ -1,6 +1,7 @@
 package pageObjects;
 
 import java.time.Duration;
+import java.util.HashMap;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -28,25 +29,24 @@ public class AddUser extends BaseClass {
 
 	}
 
-	public void enterAddUserPageDetails() {
+	public void enterAddUserDetails(HashMap<String, String> data) {
 
 		WebDriverWait wait = new WebDriverWait(LocalDriverFactory.getInstance().getLocalDriver(),
 				Duration.ofSeconds(10));
 		wait.until(ExpectedConditions.elementToBeClickable(txt_firstName));
 		sendKeys_Custom(LocalDriverFactory.getInstance().getLocalDriver().findElement(txt_firstName), "First Name",
-				"Ram");
+				data.get("FirstName"));
 		wait.until(ExpectedConditions.elementToBeClickable(txt_lastName));
 		sendKeys_Custom(LocalDriverFactory.getInstance().getLocalDriver().findElement(txt_lastName), "Last Name",
-				"Raj");
+				data.get("LastName"));
 		wait.until(ExpectedConditions.elementToBeClickable(txt_email));
 		sendKeys_Custom(LocalDriverFactory.getInstance().getLocalDriver().findElement(txt_email), "Email",
-				"Ram@gmail.com");
+				data.get("Email"));
 
 		click_Custom(LocalDriverFactory.getInstance().getLocalDriver().findElement(ddDiv_department), "Department");
-		String dept = "Quality Control";
 		click_Custom(
 				LocalDriverFactory.getInstance().getLocalDriver().findElement(By
-						.xpath("//div[@class='scrollView scrollableContainer']/div/div[2]/div[text()='" + dept + "']")),
+						.xpath("//div[@class='scrollView scrollableContainer']/div/div[2]/div[text()='" + data.get("Department") + "']")),
 				"Department");
 
 //		wait.until(ExpectedConditions.presenceOfElementLocated(btn_calender));
@@ -55,9 +55,7 @@ public class AddUser extends BaseClass {
 //		click_Custom(LocalDriverFactory.getInstance().getLocalDriver().findElement(btn_today), "Today");		//today by default selected
 //		click_Custom(LocalDriverFactory.getInstance().getLocalDriver().findElement(chk_useCorporatesettings),	//already checked
 //				"Use Corporate settings CheckBox");
-	}
-
-	public void clickOnSaveButton() {
+		
 		click_Custom(LocalDriverFactory.getInstance().getLocalDriver().findElement(btn_saveAndSendInvitation),
 				"Save Button");
 	}
