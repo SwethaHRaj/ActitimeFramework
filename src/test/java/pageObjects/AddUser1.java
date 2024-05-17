@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import testBase.BaseClass;
 import testBase.LocalDriverFactory;
 
-public class AddUser extends BaseClass {
+public class AddUser1 extends BaseClass {
 
 	By logo = By.xpath("//div[text()='Add User']");
 	By txt_firstName = By.xpath("//div/input[@id='createUserPanel_firstNameField']"); // executor

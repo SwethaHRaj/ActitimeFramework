@@ -13,7 +13,7 @@ import reusableComponents.ActionEngine;
 import testBase.ExtentTestFactory;
 import testBase.LocalDriverFactory;
 
-public class Users extends ActionEngine {
+public class Users1 extends ActionEngine {
 
 	By logo = By.xpath("//tr/td/div/span[text()='List of Users']");
 	By btn_departments = By

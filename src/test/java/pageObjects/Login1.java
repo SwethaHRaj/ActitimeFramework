@@ -6,7 +6,7 @@ import reusableComponents.PropertiesOperations;
 import testBase.BaseClass;
 import testBase.LocalDriverFactory;
 
-public class Login extends BaseClass {
+public class Login1 extends BaseClass {
 
 	By txt_userName = By.id("username");
 	By txt_password = By.name("pwd");

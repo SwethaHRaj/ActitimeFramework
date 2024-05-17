@@ -6,10 +6,13 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
-import pageObjects.AddUser;
+import pageObjects.AddUser1;
 import pageObjects.Home;
+import pageObjects.Home1;
 import pageObjects.Login;
-import pageObjects.Users;
+import pageObjects.Login1;
+import pageObjects.NavBar;
+import pageObjects.Users1;
 import reusableComponents.ActionEngine;
 import reusableComponents.CommonMethods;
 import reusableComponents.DataBaseOperations;
@@ -20,11 +23,15 @@ public class BaseClass extends ActionEngine {
 
 	DriverFactory driver = new DriverFactory();
 	public CommonMethods cm = new CommonMethods();;
-	public Login login;
-	public Home home;
-	public Users users;
-	public AddUser addUser;
+//	public Login1 login1;
+//	public Home1 home1;
+//	public Users1 users1;
+//	public AddUser1 addUser1;
 	public DataBaseOperations db;
+	
+	public Home home;
+	public Login login;
+	public NavBar navBar;
 
 	@BeforeMethod
 	public void setup() {
@@ -35,11 +42,14 @@ public class BaseClass extends ActionEngine {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 		driver.navigate().to(PropertiesOperations.getProperty("url"));
 
-		login = new Login();
-		home = new Home();
-		users = new Users();
-		addUser = new AddUser();
+//		login = new Login1();
+//		users = new Users1();
+//		addUser = new AddUser1();
 		db=new DataBaseOperations();
+		
+		home = new Home();
+		login = new Login();
+		navBar = new NavBar();
 	}
 
 	@AfterMethod

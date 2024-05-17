@@ -2,23 +2,20 @@ package test;
 
 import org.testng.annotations.Test;
 
+import reusableComponents.PropertiesOperations;
 import testBase.BaseClass;
 
 @Test
 public class LoginTest extends BaseClass {
-
-	public void traineeLoginTest1() throws Exception {	
-		login.login2("trainee","trainee");
-		home.checkHomePageNavigation();
-	}
 	
-	public void adminLoginTest1() throws Exception {	
-		login.login2("admin","manager");
-		home.checkHomePageNavigation();
-	}
-	
-	public void clientLoginTest1() throws Exception {	
-		login.login2("client","client");
-		home.checkHomePageNavigation();
+	public void loginTest() throws Exception {
+		home.verifyHomePageNavigation();
+		navBar.clickLoginButton();
+		login.verifyLoginPageNavigation();
+		login.enterPhoneNumber(PropertiesOperations.getProperty("phoneNumber"));
+		login.clickVerifyButton();
+		login.enterOtp(PropertiesOperations.getProperty("otp"));
+		login.clickSubmitButton();
+		navBar.verifyLogin();
 	}
 }

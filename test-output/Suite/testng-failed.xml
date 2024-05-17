@@ -11,7 +11,7 @@
         <methods>
           <include name="tearDown"/>
           <include name="setup"/>
-          <include name="clientLoginTest1"/>
+          <include name="loginTest"/>
         </methods>
       </class> <!-- test.LoginTest -->
     </classes>

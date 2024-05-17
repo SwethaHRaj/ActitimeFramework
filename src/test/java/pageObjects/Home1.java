@@ -7,7 +7,7 @@ import org.openqa.selenium.By;
 import testBase.BaseClass;
 import testBase.LocalDriverFactory;
 
-public class Home extends BaseClass {
+public class Home1 extends BaseClass {
 
 	By logo = By.id("logo_aT");
 
