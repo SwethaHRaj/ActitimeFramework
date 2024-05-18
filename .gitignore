@@ -1,0 +1,30 @@
+# Eclipse-specific files
+.metadata/
+.recommenders/
+.settings/
+.classpath
+.project
+
+# Compiled class files
+target/
+bin/
+
+# Test reports and output
+test-output/
+
+# IDE-specific configuration
+*.launch
+*.tmproj
+*.iml
+*.ipr
+*.iws
+
+# Local environment files
+local.properties
+
+# Maven build artifacts
+*.jar
+dependency-reduced-pom.xml
+
+# System-specific files (macOS)
+.DS_Store
